@@ -4,17 +4,14 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Button from "./components/buttons/Button";
 import Input from "./components/input/Input";
+import ProgressBar from "./components/progressBar/ProgressBar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-    <Button>Primary</Button>
-     <Button size="lg" variant="danger">
-        Submit
-      </Button>
-      <Input type="email" placeholder="Enter Email"  onChange={(e) => console.log(e.target.value)} />
+      <div style={{padding:"16px",width:"100px"}}>
+        <ProgressBar value={70} visibility={true} />
+      </div>
     </>
   );
 }
