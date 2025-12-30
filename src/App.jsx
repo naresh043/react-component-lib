@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div style={{padding:"16px",width:"100px"}}>
-        <ProgressBar value={70} visibility={true} />
+        <ProgressBar value={20} visibility={true} />
       </div>
     </>
   );

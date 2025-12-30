@@ -6,7 +6,7 @@ function ProgressBar({
   height = "12px",
   background = "green",
   borderRadius = "20px",
-  visibility = true,
+  visibility = false,
   children,
 }) {
   // clamp value between 0 and 100

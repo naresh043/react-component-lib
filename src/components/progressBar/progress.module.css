@@ -4,7 +4,6 @@
   overflow: hidden;
   margin: 16px 0;          /* IMPORTANT: makes it visible */
   box-sizing: border-box;  /* prevents border issues */
-  border: 2px solid red;   /* debugging border (remove later) */
 }
 
 .bar {
