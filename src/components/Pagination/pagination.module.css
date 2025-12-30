@@ -1,0 +1,56 @@
+/* Wrapper */
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  list-style: none;
+  margin: 16px 0;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Page item */
+.item {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.item:hover {
+  background-color: #f1f5f9;
+}
+
+/* Active page */
+.active {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Disabled (Prev / Next) */
+.disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Optional: better focus for accessibility */
+.item:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
