@@ -14,10 +14,16 @@ import AccordionPanel from "./components/accordion/AccordionPanel";
 
 import RadioGroup from "./components/radioGroup/RadioGroup";
 import RadioOption from "./components/radioGroup/RadioOption";
+import Dropdown from "./components/Dropdown/Dropdown";
+import DropdownToggle from "./components/Dropdown/DropdownToggle";
+import DropdownMenu from "./components/Dropdown/DropdownMenu";
+import DropdownItem from "./components/Dropdown/DropdownItem";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1); //3
-  const [selected, setSelected] = useState("male");
+  const [selected, setSelected] = useState("Select the country");
+
+  const [open, setOpen] = useState(false);
 
   const handlePageChange = (page) => {
     setCurrentPage(page); //3
@@ -54,7 +60,7 @@ function App() {
           developers to create reusable UI components.
         </Accordion>
       </div> */}
-<h1>Accordion</h1>
+      <h1>Accordion</h1>
       <Accordion>
         <AccordionItem>
           <AccordionHeader>what is react</AccordionHeader>
@@ -97,12 +103,30 @@ function App() {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
-{console.log(selected)}
+
       <RadioGroup value={selected} onChange={setSelected} name="gender">
-        <RadioOption value="female" label="female"/>
-        <RadioOption value="male" label="male" className="naresh"/>
-         <RadioOption value="other" label="other"/>
+        <RadioOption value="female" label="female" />
+        <RadioOption value="male" label="male" className="naresh" />
+        <RadioOption value="other" label="other" />
       </RadioGroup>
+
+      <Dropdown open={open} onToggle={() => setOpen(!open)}>
+        <DropdownToggle label={selected} onClick={() => setOpen(!open)} />
+        <DropdownMenu>
+          <DropdownItem value="India" onSelect={setSelected}>
+            India
+          </DropdownItem>
+          <DropdownItem value="US" onSelect={setSelected}>
+            US
+          </DropdownItem>
+          <DropdownItem value="UK" onSelect={setSelected}>
+            UK
+          </DropdownItem>
+          <DropdownItem value="USA" onSelect={setSelected}>
+            USA
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
     </div>
   );
 }
