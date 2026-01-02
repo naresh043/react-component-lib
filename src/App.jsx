@@ -12,8 +12,12 @@ import AccordionItem from "./components/accordion/AccordionItem";
 import AccordionHeader from "./components/accordion/AccordionHeader";
 import AccordionPanel from "./components/accordion/AccordionPanel";
 
+import RadioGroup from "./components/radioGroup/RadioGroup";
+import RadioOption from "./components/radioGroup/RadioOption";
+
 function App() {
   const [currentPage, setCurrentPage] = useState(1); //3
+  const [selected, setSelected] = useState("male");
 
   const handlePageChange = (page) => {
     setCurrentPage(page); //3
@@ -93,6 +97,12 @@ function App() {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
+{console.log(selected)}
+      <RadioGroup value={selected} onChange={setSelected} name="gender">
+        <RadioOption value="female" label="female"/>
+        <RadioOption value="male" label="male" className="naresh"/>
+         <RadioOption value="other" label="other"/>
+      </RadioGroup>
     </div>
   );
 }
