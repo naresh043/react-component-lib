@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./pagination.module.css";
 
 function Pagination({ totalItems, perPage, current, onChange }) {
-
-  const totalPages = Math.ceil(totalItems / perPage);
+  const totalPages = Math.ceil(totalItems / perPage);//7
   const pages = [];
   for (let i = 1; i <= totalPages; i++) {
     pages.push(i);
@@ -12,37 +11,31 @@ function Pagination({ totalItems, perPage, current, onChange }) {
   const handleClick = (page) => {
     if (page === current) return;
 
-    const start = (page - 1) * perPage;
-    const end = page * perPage;
+    // const start = (page - 1) * perPage;
+    // const end = page * perPage;
 
-    onChange({ current: page});
+    onChange(page);//3
   };
-
-
   const handlePreviousPage = () => {
-    if (current === 1) return;
+    if (current === 1) return; //7
 
-    const page = current - 1;
+    const page = current - 1;//6
     const start = (page - 1) * perPage;
     const end = page * perPage;
 
-    onChange({ current: page });
+    onChange(page);
   };
-
-
   const handleNextPage = () => {
-    if (current === totalPages) return;
+    if (current === totalPages) return;//1
 
-    const page = current + 1;
-    const start = (page - 1) * perPage;
-    const end = page * perPage;
-
-    onChange({ current: page});
+    const page = current + 1;//2
+    const start = (page - 1) * perPage;//1*16--->16
+    const end = page * perPage; //2*16=>32
+    onChange(page);
   };
 
   return (
     <ul className={styles.wrapper}>
-
       <li
         className={`${styles.item} ${
           current === 1 ? styles.disabled : ""
@@ -58,7 +51,7 @@ function Pagination({ totalItems, perPage, current, onChange }) {
           className={`${styles.item} ${
             page === current ? styles.active : ""
           }`}
-          onClick={() => handleClick(page)}
+          onClick={() => handleClick(page)}//2
         >
           {page}
         </li>

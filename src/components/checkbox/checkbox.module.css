@@ -1,0 +1,60 @@
+.checkbox {
+  display: none;
+}
+
+/* checked state */
+.checkbox:checked + .customLabel {
+  background: #68c721;
+  border-color: #68c721;
+}
+
+.checkbox:checked + .customLabel::after {
+  content: "";
+}
+
+/* custom checkbox box */
+.customLabel {
+  border: 1px solid #a8acb1;
+  background-color: #fff;
+  border-radius: 3px;
+  min-width: 20px;
+  min-height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* tick mark */
+.customLabel::after {
+  width: 12px;
+  height: 5px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  transform: rotate(-45deg);
+}
+
+/* wrapper */
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* disabled */
+.disabled {
+  opacity: 0.4;
+}
+
+.disabled .label,
+.disabled .customLabel {
+  cursor: not-allowed;
+}
+
+/* text label */
+.label {
+  margin-left: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
