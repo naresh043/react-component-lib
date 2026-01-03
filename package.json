@@ -1,18 +1,33 @@
 {
   "name": "react-component-lib",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Reusable React UI component library",
   "type": "module",
+
+  "main": "dist/my-lib.umd.cjs",
+  "module": "dist/my-lib.es.js",
+
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.cjs"
+    }
+  },
+
+  "files": ["dist"],
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
+
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@types/react": "^19.2.5",
