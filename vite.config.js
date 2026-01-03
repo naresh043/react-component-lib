@@ -12,7 +12,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/index.js"),
       name: "MyLib",
-      fileName: "my-lib",
+      fileName: (format) => `my-lib.${format}.js`,
+      formats: ["es", "umd"],
     },
     rollupOptions: {
       external: ["react", "react-dom"],
